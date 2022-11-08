@@ -1,18 +1,14 @@
 class Solution {
 public:
     string makeGood(string s) {
-     int j=0,i=0;
-    while(i<s.size())
-    {
-        if(j>0 && abs(s[j-1]-s[i])==32)
+        int len = s.size();
+        for(int i=0; i<len-1;i++)
         {
-            j--;
+            if(abs(s[i+1]-s[i])==32)
+            {
+                return makeGood(s.substr(0,i)+s.substr(i+2));
+            }
         }
-        else{
-            s[j++]=s[i];
-        }
-        i++;
-    }
-    return s.substr(0,j);
+        return s;
     }
 };
