@@ -27,8 +27,8 @@ public:
             }
             
         }
-        cout<<mx<<","<<k<<endl;
-        cout<<mx/k<<endl;
+       // cout<<mx<<","<<k<<endl;
+       // cout<<mx/k<<endl;
         return mx/k;
     }
 };
