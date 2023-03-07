@@ -1,16 +1,13 @@
 class Solution {
 public:
     int countMatches(vector<vector<string>>& it, string rK, string rV) {
-        int index;
-        if(rK == "type")
-        {
-            index = 0;
-        }
-        else if(rK == "color")
+       
+        int index = 0;
+        if(rK == "color")
         {
             index = 1;
         }
-        else {
+        else if(rK == "name"){
             index = 2;
         }
         int len = it.size();
