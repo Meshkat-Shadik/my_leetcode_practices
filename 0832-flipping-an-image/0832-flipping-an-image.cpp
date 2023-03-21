@@ -1,15 +1,35 @@
 class Solution {
 public:
     vector<vector<int>> flipAndInvertImage(vector<vector<int>>& img) {
+        
         int len = img.size();
         for(int i=0; i<len; i++)
         {
-            reverse(img[i].begin(),img[i].end());
-            for(int j = 0; j<img[i].size(); j++)
-            {
-                img[i][j] = img[i][j]^1;
-            }
+           img[i] = reverse(img[i]);
+           img[i] = inverse(img[i]);
         }
         return img;
+    }
+    
+    vector<int>reverse(vector<int>mat)
+    {
+        int i=0, j = mat.size()-1;
+        while(i<j)
+        {
+            int temp = mat[i];
+            mat[i++] = mat[j];
+            mat[j--] = temp;
+        }
+        return mat;
+    }
+    
+    vector<int>inverse(vector<int>mat)
+    {
+        int len = mat.size();
+        for(int i=0;i<len;i++)
+        {
+            mat[i] = mat[i]^1;
+        }
+        return mat;
     }
 };
