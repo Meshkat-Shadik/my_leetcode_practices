@@ -11,7 +11,7 @@ public:
         return img;
     }
     
-    vector<int>reverse(vector<int>mat)
+    vector<int>reverse(vector<int>&mat)
     {
         int i=0, j = mat.size()-1;
         while(i<j)
@@ -23,7 +23,7 @@ public:
         return mat;
     }
     
-    vector<int>inverse(vector<int>mat)
+    vector<int>inverse(vector<int>&mat)
     {
         int len = mat.size();
         for(int i=0;i<len;i++)
