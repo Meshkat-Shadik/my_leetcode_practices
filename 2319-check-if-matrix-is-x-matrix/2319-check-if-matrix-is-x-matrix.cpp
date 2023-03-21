@@ -1,23 +1,31 @@
 class Solution {
 public:
     bool checkXMatrix(vector<vector<int>>& g) {
+        
         int len = g.size();
+        int len2 = g[0].size();
+        int p = 0;
+        int q = len2-1;
         for(int i=0;i<len;i++)
         {
-            int primary = g[i][i];
-            int secondary = g[len-1-i][i];
-            if(primary == 0 || secondary == 0) return false;
-            else{
-                int len2 = g[i].size();
-                for(int j=0; j<len2; j++)
+            for(int j=0; j<len2; j++)
+            {
+                if(i==j || (i==p && j==q))
                 {
-                    if(g[i][j] != 0 && i!=j && i+j != len -1)
+                    if(g[i][j]==0)
+                    {
+                        return false;
+                    }
+                }
+                else{
+                    if(g[i][j] !=0)
                     {
                         return false;
                     }
                 }
             }
-            
+            p++;
+            q--;
         }
         return true;
     }
