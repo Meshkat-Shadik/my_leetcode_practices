@@ -1,18 +1,17 @@
 class Solution {
 public:
     int partitionString(string s) {
-        int charList[26] = {};
-        int count = 0;
-        int pos = 0;
-        
-        for(int i=0;i<s.size();i++)
-        {
-            if(charList[s[i]-'a'] >= pos)
+       int i = 0,count = 1, f = 0;
+        while(i<s.size()){
+            if(f&(1<<(s[i]-'a')))
             {
+                //found
+                //anding makes the same digit
+                f = 0;
                 count++;
-                pos = i+1;
             }
-            charList[s[i]-'a'] = i+1;
+            f = f | (1<<(s[i] - 'a'));
+            i++;
         }
         return count;
     }
