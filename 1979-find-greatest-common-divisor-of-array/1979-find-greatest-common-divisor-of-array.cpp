@@ -1,5 +1,19 @@
 class Solution {
 public:
+    int gcd(int a,int b){
+        while(a!=0 && b!=0)
+        {
+            if(a>b){
+                a = a%b;
+            }
+            else{
+                b = b%a;
+            }
+        }
+        return max(a,b);
+    }
+    
+    
     int findGCD(vector<int>& nums) {
         int maxx = INT_MIN, minn = INT_MAX;
         int temp;
@@ -11,11 +25,6 @@ public:
             minn = min(minn,nums[i]);
         }
         
-        while(minn){
-            temp = maxx % minn;
-            maxx = minn;
-            minn = temp;
-        }
-        return maxx;
+        return gcd(maxx,minn);
     }
 };
