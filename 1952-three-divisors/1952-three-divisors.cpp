@@ -1,14 +1,20 @@
 class Solution {
 public:
     bool isThree(int n) {
-    int count = 2;
+        if(n<4){
+            return false;
+        }
+        int s = int(sqrt(n));
+        if(s*s != n){
+            return false;
+        }
         
-        for(int i=2;i<n;i++)
+        for(int i=2;i<s;i++)
         {
             if(n%i==0){
-                count++;
+                return false;
             }
         }
-        return count==3;
+        return true;
     }
 };
