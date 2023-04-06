@@ -6,12 +6,16 @@ public:
             return;
         }
         g[i][j] = 1;
-        int dx[4] = {1,-1,0,0};
-        int dy[4] = {0,0,1,-1};
-        for(int k=0; k<4; k++)
-        {
-            dfs(i+dx[k],j+dy[k],g);
-        }
+        // int dx[4] = {1,-1,0,0};
+        // int dy[4] = {0,0,1,-1};
+        // for(int k=0; k<4; k++)
+        // {
+        //     dfs(i+dx[k],j+dy[k],g);
+        // }
+        dfs(i+1,j,g);
+        dfs(i-1,j,g);
+        dfs(i,j+1,g);
+        dfs(i,j-1,g);
     }
     
     
