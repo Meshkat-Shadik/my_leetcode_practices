@@ -19,18 +19,7 @@ public:
     int numEnclaves(vector<vector<int>>& g) {
         int m = g.size(), n=g[0].size();
         
-        // for(int i=0;i<m;i++)
-        // {
-        //     for(int j=0; j<n; j++)
-        //     {
-        //         //making the edge 0 and dfs
-        //         if((i == 0 || j == 0 || i == m-1 || j == n-1) && g[i][j] == 1)
-        //         {
-        //             dfs(i,j,g);
-        //         }
-        //     }
-        // }
-        
+        //checking the top and bottom row if 1 then call dfs and make it 0 (visited)
         for(int i=0;i<m;i++){
             if(g[i][0] == 1 || g[i][n-1] == 1){
                 dfs(i,0,g);
@@ -38,6 +27,7 @@ public:
             }
         }
         
+        //checking the left and right column if 1 then call dfs and make it 0 (visited)
         for(int i=0;i<n;i++){
            if(g[0][i] == 1 || g[m-1][i] == 1){
                 dfs(0,i,g);
@@ -60,6 +50,5 @@ public:
             }
         }
         return count;
-        
     }
 };
