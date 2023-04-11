@@ -5,8 +5,9 @@ public:
         int count = 0;
         for(int i=0 ; i<len ; i++){
             if(s[i] == "../"){  // sure it is ../
-                if(count>0){
                     count--;
+                if(count<0){
+                    count = 0;
                 }
                 //cout<<s[i]<<" so -- , "<<count<<endl;
             }
