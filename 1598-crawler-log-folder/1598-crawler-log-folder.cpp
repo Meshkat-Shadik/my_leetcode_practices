@@ -4,13 +4,13 @@ public:
         int len = s.size();
         int count = 0;
         for(int i=0 ; i<len ; i++){
-            if(s[i][1]=='.'){  // sure it is ../
+            if(s[i] == "../"){  // sure it is ../
                 if(count>0){
                     count--;
                 }
                 //cout<<s[i]<<" so -- , "<<count<<endl;
             }
-            else if(s[i][1] == '/' && s[i][0] == '.'){  //sure it is ./
+            else if(s[i] == "./"){  //sure it is ./
                 continue;
               //  cout<<s[i]<<" skiped , "<<count<<endl;
             }
