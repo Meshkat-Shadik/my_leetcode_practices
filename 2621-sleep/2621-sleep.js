@@ -2,7 +2,11 @@
  * @param {number} millis
  */
 async function sleep(m) {
-    await new Promise(resolve => setTimeout(resolve, m));
+  return new Promise((res, rej) => {
+        setTimeout(() => {
+            res(0);
+        }, m);
+        });
 }
 
 /** 
