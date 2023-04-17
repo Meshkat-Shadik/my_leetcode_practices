@@ -4,7 +4,7 @@ public:
         int len = c.size();
         int maxx = -1;
         
-        vector<bool>res;
+        vector<bool>res(len);
         
         for(int i=0;i<len;i++){
             if(c[i]>maxx){
@@ -13,7 +13,7 @@ public:
         }
         
         for(int i=0;i<len;i++){
-            res.push_back(c[i]+ec >= maxx);
+            res[i] = c[i] + ec >=maxx;
         }
         return res;
     }
