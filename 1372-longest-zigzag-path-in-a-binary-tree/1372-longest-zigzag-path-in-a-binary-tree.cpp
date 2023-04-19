@@ -12,17 +12,23 @@
 class Solution {
 public:
     int maxx = 0;
-    void dfs(TreeNode* r, int dir, int w){
+    void dfs(TreeNode* r, bool dir, int w){
         if(!r) return;
         maxx = max(maxx,w);
-        dfs(r->left,0, dir == 0 ? 1: w+1);
-        dfs(r->right,1, dir == 1 ? 1 : w+1);
+        if(!dir){
+            dfs(r->left,false,1);
+            dfs(r->right,true,w+1);
+        }
+        else{
+            dfs(r->left,false,w+1);
+            dfs(r->right,true,1);
+        }
     }
     
     
     int longestZigZag(TreeNode* r) {
-        dfs(r,0,0);
-        dfs(r,1,0);
+        dfs(r,false,0);
+        dfs(r,true,0);
         return maxx;
     }
 };
