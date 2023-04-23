@@ -1,12 +1,12 @@
 class Solution {
 public:
     vector<int> intersection(vector<vector<int>>& nums) {
-        unordered_map<int,int>m;
+        map<int,int>m;
         int l1 = nums.size();
         
-        for(int i=0; i<l1; i++){
-            for(int j=0; j<nums[i].size(); j++){
-                m[nums[i][j]]++;
+        for(auto i:nums){
+            for(auto j:i){
+                m[j]++;
             }
         }
         
@@ -16,7 +16,6 @@ public:
                 ans.push_back(i.first);
             }
         }
-        sort(ans.begin(),ans.end());
         return ans;
     }
 };
