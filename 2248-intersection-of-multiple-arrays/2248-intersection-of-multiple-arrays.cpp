@@ -13,7 +13,7 @@ public:
         vector<int>ans;
         for(auto i:m){
             if(i.second == l1){
-                ans.push_back(i.first);
+                ans.emplace_back(i.first);
             }
         }
         return ans;
