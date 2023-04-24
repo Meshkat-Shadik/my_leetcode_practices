@@ -1,7 +1,8 @@
 class Solution {
 public:
     int sum(int n, int x){
-         return x*((n/x)*((n/x)+1)/2);
+        n = n/x;
+        return x * n * (n+1)/2;
     }
     
     int sumOfMultiples(int n) {
