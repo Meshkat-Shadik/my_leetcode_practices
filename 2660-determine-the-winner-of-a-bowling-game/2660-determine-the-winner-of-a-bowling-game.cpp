@@ -1,18 +1,21 @@
 class Solution {
 public:
     int find(vector<int>& p){
-        int count = 0, sum = 0;
-        for(int i=0;i<p.size();i++){
-            if(count>0){
-                sum = sum + 2*p[i];
+        int last1=0,last2=0,sum=0;
+        
+        for(int i = 0;i<p.size(); i++)
+        {
+            if(last1==10||last2==10)
+            {
+                sum = sum + (p[i]*2);
             }
-            else{
-                sum = sum+p[i];
+            else
+            {
+                sum = sum + p[i];
             }
-            count --;
-            if(p[i]==10){
-                count = 2;
-            }
+            
+            last2=last1;
+            last1=p[i];
         }
         return sum;
     }
