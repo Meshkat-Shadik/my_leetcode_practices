@@ -23,10 +23,13 @@ public:
     
     int isWinner(vector<int>& p1, vector<int>& p2) {
         
-        if(find(p1)>find(p2)){
+        int x = find(p1);
+        int y = find(p2);
+        
+        if(x>y){
             return 1;
         }
-        else if(find(p1)==find(p2)){
+        else if(x==y){
             return 0;
         }
         else {
