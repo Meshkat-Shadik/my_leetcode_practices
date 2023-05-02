@@ -7,16 +7,13 @@ public:
             if(nums[i]==0){
                 return 0;
             }
-            if(nums[i]<0){
+           else if(nums[i]<0){
                 negC++;
             }
         }
         if((negC&1)==0){
             return 1;
         }
-        else{
-            return -1;
-        }
-        
+        return -1;
     }
 };
