@@ -11,7 +11,7 @@ public:
                 negC++;
             }
         }
-        if((negC&1)==0){
+        if((negC%2)==0){
             return 1;
         }
         return -1;
