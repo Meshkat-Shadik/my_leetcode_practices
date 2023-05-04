@@ -1,2 +1,1 @@
-We can store the n1 array's item in a set.
-then traversing the n2 and perform erase operation from set by the item, if erase is success that means the n2's item already presented and that's why it is erased! and we push the value in that case.
+​
