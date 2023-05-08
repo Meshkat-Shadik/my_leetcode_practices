@@ -9,7 +9,7 @@ public:
           sum = sum + (mat[len-1-i][i]); //secondary
       }
       if(len&1){  //odd
-          return sum - mat[len/2][len/2];
+          sum = sum - mat[len/2][len/2];
       }
       return sum;
     }
