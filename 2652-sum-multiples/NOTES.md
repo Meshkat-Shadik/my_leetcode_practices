@@ -14,4 +14,7 @@ so, for x's multiple and n's number we can write,
 ### = x \*((n/x)\*((n/x)+1)/2)
 ​
 ​
+then from the set theory of
+( A U B U C )  =  A + B + C - AnB - AnC - BnC + AnBnC
+​
 ​
