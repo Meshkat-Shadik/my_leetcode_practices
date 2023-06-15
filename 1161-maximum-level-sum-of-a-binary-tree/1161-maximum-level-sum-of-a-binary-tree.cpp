@@ -12,9 +12,10 @@
 class Solution {
 public:
     int maxLevelSum(TreeNode* root) {
+        if(!root)return 0;
         queue<TreeNode*>q;
         q.push(root);
-        int ans = -1, maxx = INT_MIN, level = 0;
+        int ans = 0, maxx = INT_MIN, level = 0;
         while(!q.empty()){
             int len = q.size();
             level++;
