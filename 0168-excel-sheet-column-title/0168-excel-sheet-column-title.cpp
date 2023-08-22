@@ -1,7 +1,14 @@
 class Solution {
 public:
-    string convertToTitle(int n) {
-        if(n==0) return "";
-        return convertToTitle((n-1)/26)+char((n-1)%26 + 'A');
+    string convertToTitle(int c) {
+        int x;
+        string ans = "";
+        while(c>0){
+            x = (c-1) % 26;
+            ans = char('A'+x) + ans;
+            c = (c-1)/26;
+            
+        }
+        return ans;
     }
 };
