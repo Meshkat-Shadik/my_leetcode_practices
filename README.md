@@ -1,2 +1,2 @@
-# my_leetcode_practices
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+### 🔥 My LeetCode Stat :
+![Leetcode Stats](https://leetcard.jacoblin.cool/shadik14?theme=dark&font=Poppins&ext=activity)
