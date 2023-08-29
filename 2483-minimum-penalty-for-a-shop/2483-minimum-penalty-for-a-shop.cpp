@@ -1,34 +1,20 @@
 class Solution {
 public:
     int bestClosingTime(string c) {
-        int siz = c.length();
-        vector<int>y,n;
-        y.push_back(0);
-        n.push_back(0);
-        
-        int count = 0;
-        for(int i=0;i<siz;i++){
-            if(c[i]=='N'){
-                count++;
+        int sum = 0, ans = 0, ind = -1, temp = 1;
+        for(int i=0;i<c.size();i++){
+           if(c[i]=='N') {
+               temp = -1;
+           }
+            else{
+                temp = 1;
             }
-            n.push_back(count);
-        }
-        count = 0;
-        for(int i=siz-1;i>=0;i--){
-            if(c[i]=='Y'){
-                count++;
-            }
-            y.push_back(count);
-        }
-        reverse(y.begin(),y.end());
-        int ans = INT_MAX, ind = 0;
-        for(int i=0;i<siz+1;i++){
-            int h = y[i]+n[i];
-            if(h<ans){
-                ans = h;
+            sum = sum + temp;
+            if(sum>ans){
+                ans = sum;
                 ind = i;
             }
         }
-        return ind;
+        return ind+1;
     }
 };
