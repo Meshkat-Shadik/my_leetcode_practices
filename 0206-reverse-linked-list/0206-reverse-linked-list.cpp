@@ -11,20 +11,19 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if(head == NULL) return NULL;
-        //3 pointer approach
-        ListNode* p = NULL;
-        ListNode* c = head;
-        ListNode* n = c->next;
-        
-        while(c){
-            c->next = p;
-            p = c;
-            c = n;
-            if(n){
-                n = n->next;
-            }
+        if(head==NULL||head->next==NULL) return head;
+        ListNode *curr = head, *back = NULL, *front;
+        while(curr){
+            //current->next = back will destroy the front of the current
+            //so we need to store this
+            front = curr->next;
+            //current to previous
+            curr->next = back;
+            //move previous to current (1 step forward)
+            back = curr;
+            //move current forward
+            curr = front;
         }
-        return p;
+        return back;
     }
 };
