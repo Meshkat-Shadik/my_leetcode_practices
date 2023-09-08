@@ -30,7 +30,7 @@ public:
         //we need the middle's previous position, that why incrementing f at first
         ListNode* f = head->next->next; 
         ListNode* prev = head;
-        bool res =true;
+        //bool res =true;
         
         while(f && f->next){
             s = s->next;
@@ -40,13 +40,14 @@ public:
         f = head;
         while(mid){
             if(mid->val != f->val){
-                res = false;
-                break;
+                //res = false;
+                //break;
+                return false;
             }
             mid = mid->next;
             f = f->next;
         }
-        s->next = reverse(mid);        
-        return res;
+        //s->next = reverse(mid);        
+        return true;
     }
 };
