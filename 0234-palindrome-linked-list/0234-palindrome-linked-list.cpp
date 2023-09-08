@@ -30,16 +30,20 @@ public:
         //we need the middle's previous position, that why incrementing f at first
         ListNode* f = head->next->next; 
         ListNode* prev = head;
-        //bool res =true;
+        
+        //bool res =true;  //we need this, if we are asked to no change of input linked-list after checking
         
         while(f && f->next){
             s = s->next;
             f = f->next->next;
         }
+        //here we found the mid node with reversed state
        ListNode* mid = reverse(s->next);
+        //as we don't need f any more, instead of creating another node, we just reuse it
         f = head;
         while(mid){
             if(mid->val != f->val){
+                //we need this two line, if we are asked to no change of input linked-list after checking
                 //res = false;
                 //break;
                 return false;
@@ -47,7 +51,8 @@ public:
             mid = mid->next;
             f = f->next;
         }
-        //s->next = reverse(mid);        
+        //we need this line, if we are asked to no change of input linked-list after checking
+        //s->next = reverse(mid);        //it just reverse again and attach to the mid. 
         return true;
     }
 };
