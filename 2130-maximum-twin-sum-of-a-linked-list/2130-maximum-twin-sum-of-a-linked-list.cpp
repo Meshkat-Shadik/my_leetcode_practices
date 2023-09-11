@@ -9,33 +9,32 @@
  * };
  */
 class Solution {
-    public:
-     int pairSum(ListNode* head) {
-        ListNode* slow = head;
-        ListNode* fast = head;
-        int maxVal = 0;
-
-        while(fast && fast -> next)
-        {
-            slow = slow -> next;
-            fast = fast -> next -> next;
+public:
+    ListNode* reverse(ListNode* node){
+        ListNode* back = NULL;
+        while(node){
+            ListNode* front = node->next;
+            node->next = back;
+            back = node;
+            node = front;
         }
-
-        ListNode *nextNode, *prev = NULL;
-        while (slow) {
-            nextNode = slow->next;
-            slow->next = prev;
-            prev = slow;
-            slow = nextNode;
+        return back;
+    }
+    int pairSum(ListNode* head) {
+        ListNode* s = head, *f = head->next->next;
+        while(f && f->next){
+            s = s->next;
+            f = f->next->next;
         }
-
-        while(prev)
-        {
-            maxVal = max(maxVal, head -> val + prev -> val);
-            prev = prev -> next;
-            head = head -> next;
+        //as we don't need s,f so reuse them
+        s = reverse(s->next);
+        f = head;
+        int maxx = INT_MIN;
+        while(s){
+            maxx = max(maxx,(f->val+s->val));
+            f = f->next;
+            s = s->next;
         }
-
-        return maxVal;
+        return maxx;
     }
 };
