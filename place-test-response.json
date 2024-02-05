@@ -1,0 +1,89 @@
+{
+  "geocoded_waypoints": [
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJ7cv00DwsDogRAMDACa2m4K8",
+      "types": ["locality", "political"]
+    },
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJ69QoNDwsDogRk9tKtEG3wSU",
+      "types": ["locality", "political"]
+    }
+  ],
+  "routes": [
+    {
+      "bounds": {
+        "northeast": {
+          "lat": 41.878113,
+          "lng": -87.629787
+        },
+        "southwest": {
+          "lat": 41.876606,
+          "lng": -87.628645
+        }
+      },
+      "copyrights": "Map data ©2024 Google",
+      "legs": [
+        {
+          "distance": {
+            "text": "0.5 mi",
+            "value": 804
+          },
+          "duration": {
+            "text": "2 mins",
+            "value": 120
+          },
+          "end_address": "111 W Jackson Blvd, Chicago, IL 60604, USA",
+          "end_location": {
+            "lat": 41.877839,
+            "lng": -87.629307
+          },
+          "start_address": "ChIJ7cv00DwsDogRAMDACa2m4K8",
+          "start_location": {
+            "lat": 41.876606,
+            "lng": -87.628645
+          },
+          "steps": [
+            {
+              "distance": {
+                "text": "0.1 mi",
+                "value": 207
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 51
+              },
+              "end_location": {
+                "lat": 41.877839,
+                "lng": -87.629307
+              },
+              "html_instructions": "Head <b>north</b> on <b>S LaSalle St</b> toward <b>W Adams St</b>",
+              "polyline": {
+                "points": "a~l~Fjk~uOwHJy@P"
+              },
+              "start_location": {
+                "lat": 41.876606,
+                "lng": -87.628645
+              },
+              "travel_mode": "DRIVING"
+            }
+            // ... additional steps with random values ...
+          ],
+          "traffic_speed_entry": [],
+          "via_waypoint": []
+        }
+      ],
+      "overview_polyline": {
+        "points": "a~l~Fjk~uOnzh@vlbBtc~@tsE`vnApw{A`dw@~w\\\\|tNtqf@l{Yd_Fblh@rxo@b}@xxSfyt@tka@`da@lka@~vFfyt@tkc@~e\\\\f{Ydxo@`ng@tke@~vFfyt@tka@`da@lka@~vFfyt@tkc@~e\\\\f{Ydxo@"
+        // Example polyline points (truncated for brevity)
+      },
+      "warnings": [
+        // ... warnings if any ...
+      ],
+      "waypoint_order": []
+    }
+    // ... additional route details if multiple routes are available ...
+  ],
+  "status": "OK"
+}
